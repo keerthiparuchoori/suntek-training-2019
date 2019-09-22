@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+
+
+int main()
+{
+  char s1[20],s2[20];
+  scanf("%s%s",s1,s2);
+  char t;
+  int i,j,l1,l2;
+  l1=strlen(s1);
+  l2=strlen(s2);
+  if(l1!=l2)
+    printf("not");
+  for(i=0;i<l1;i++)
+  {
+      for(j=i+1;j<l1;j++)
+      {
+          if(s1[i]>s1[j])
+           {
+            t=s1[i];
+          s1[i]=s1[j];
+          s1[j]=t;
+           }
+           if(s2[i]>s2[j])
+           {
+               t=s2[i];
+         s2[i]=s2[j];
+          s2[j]=t;
+           }
+      }
+  }
+  for(i=0;i<l1;i++)
+  {
+      if(s1[i]!=s2[i])
+       {
+    printf("not anagrams");
+      return 0;
+  }
+  }
+  printf("anagrams");
+    return 0;
+}

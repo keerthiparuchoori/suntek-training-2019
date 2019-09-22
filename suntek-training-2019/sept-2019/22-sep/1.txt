@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[20];
+    int l,i,j,k,count;
+    scanf("%s",s);
+    for(l=0;s[l]!='\0';l++);
+  for(i=0;i<l;i++)
+  {
+      count=1;
+           for(j=i+1;j<l;j++)
+      {
+          if(s[i]==s[j])
+          {
+             for(k=j;s[k]!='\0';k++)
+             {
+                 s[k]=s[k+1];
+              }
+              count++;
+          }
+      }
+      if(s[i]!='\0')
+    printf("%c:%d\n",s[i],count);
+  }
+
+    printf("%s",s);
+
+
+    return 0;
+}
